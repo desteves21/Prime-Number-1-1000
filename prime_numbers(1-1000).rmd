@@ -1,0 +1,19 @@
+---
+title: "Prime_numbers(1-1000)"
+author: "Daniel Esteves"
+date: "2024-07-30"
+output: html_document
+---
+
+```{r}
+# This is an R code chunk
+is_prime <- function(n) {
+  if (n <= 1) return(FALSE)
+  for (i in 2:sqrt(n)) {
+    if (n %% i == 0) return(FALSE)
+  }
+  return(TRUE)
+}
+
+prime_numbers <- Filter(is_prime, 1:1000)
+print(prime_numbers)
